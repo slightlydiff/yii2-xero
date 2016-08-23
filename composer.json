@@ -1,0 +1,31 @@
+{
+    "name": "slightlydiff/yii2-xero",
+    "description": "An extension for using the Xero API from within Yii2",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","xero","api"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Slightly Different Limited",
+            "email": "stephen@slightlydifferent.co.nz",
+            "homepage": "https://www.slightlydifferent.co.nz"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/slightlydiff/yii2-xero/issues?state=open",
+        "source": "https://github.com/slightlydiff/yii2-xero"
+    },
+    "require": {
+        "yiisoft/yii2": "*",
+        "php": ">=5.5"
+    },
+    "autoload": {
+        "files": ["xerooauth/lib/XeroOAuth.php"],
+        "psr-4": {
+            "slightlydiff\\xero\\": "src/"
+        }
+    },
+    "extra": {
+        "bootstrap": "slightlydiff\\xero\\Bootstrap"
+    }
+}
