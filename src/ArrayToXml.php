@@ -1,5 +1,5 @@
 <?php
-namespace xero;
+namespace slightlydiff\xero;
 
 class ArrayToXML {
     /**
