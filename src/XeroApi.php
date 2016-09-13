@@ -132,7 +132,7 @@ class XeroApi extends Component {
                 if (is_a($arguments[1], 'SimpleXMLElement')) {
                     $post_body = $arguments[1]->asXML();
                 } elseif (is_array($arguments[1])) {
-                    $post_body = ArrayToXML::toXML($arguments[1], $rootNodeName = $api_command['slug']);
+                    $post_body = ArrayToXml::toXML($arguments[1], $rootNodeName = $api_command['slug']);
                 }
                 $post_body = trim(substr($post_body, (stripos($post_body, ">") + 1)));
             } else {

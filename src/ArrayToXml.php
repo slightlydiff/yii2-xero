@@ -1,7 +1,7 @@
 <?php
 namespace slightlydiff\xero;
 
-class ArrayToXML {
+class ArrayToXml {
     /**
      * The main function for converting to an XML document.
      * Pass in a multi dimensional array and this recrusively loops through and
@@ -38,12 +38,12 @@ class ArrayToXML {
 
             // if there is another array found recursively call this function
             if (is_array($value)) {
-                $node = (ArrayToXML::isAssoc($value) || $numeric) ? $xml->addChild($key) : $xml;
+                $node = (ArrayToXml::isAssoc($value) || $numeric) ? $xml->addChild($key) : $xml;
 
                 // recursive call.
                 if ($numeric)
                     $key = 'anon';
-                ArrayToXML::toXml($value, $key, $node);
+                ArrayToXml::toXml($value, $key, $node);
             } else {
 
                 // add single node.
@@ -80,7 +80,7 @@ class ArrayToXML {
             return (string)$xml;
         $arr = array();
         foreach ($children as $key => $node) {
-            $node = ArrayToXML::toArray($node);
+            $node = ArrayToXml::toArray($node);
 
             // support for 'anon' non-associative arrays
             if ($key == 'anon')
