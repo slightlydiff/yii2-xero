@@ -201,7 +201,14 @@ class XeroApi extends Component {
                                             );
                                             
             if ($XeroOAuth->response['code'] == 200) {
-                $data = $XeroOAuth->parseResponse($XeroOAuth->response['response'], $XeroOAuth->response['format']);
+	            $data = $XeroOAuth->parseResponse( $XeroOAuth->response['response'], $XeroOAuth->response['format'] );
+            } elseif ($command == 'contacts') {
+	            //$data = $XeroOAuth->parseResponse( $XeroOAuth->response['response'], $XeroOAuth->response['format'] );
+				//if ($data->ApiException->Elements[0]->DataContractBase->ValidationErrors[0]->ValidationError->Message == 'The specified contact details matched an archived contact. Archived contacts cannot currently be edited via the API.') {
+					// ignore and carry on
+				//} else {
+				//	throw new UserException(\Yii::t('xero', 'The Xero Api has returned the following error:{errors}', ['errors' => PHP_EOL . $XeroOAuth->response['response']]));
+				//}
             } else {
                 throw new UserException(\Yii::t('xero', 'The Xero Api has returned the following error:{errors}', ['errors' => PHP_EOL . $XeroOAuth->response['response']]));
             }
